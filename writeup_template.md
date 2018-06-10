@@ -17,7 +17,7 @@ German Traffic Sign Data athered from
 
 Example Image from DataSet
 
-![alt text][dataphoto.png]
+![datset img](dataphoto.png)
 
 
 ### Design and Test a Model Architecture
@@ -39,18 +39,19 @@ The dataset could be processed further by taking the existing images from the da
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					
+|          		|     Description	        					
 |:---------------------:|:---------------------------------------------: 
+| LAYER 1 |
 | Input         		| 32x32x1 GreyScale image   			|			
-||
+| LAYER 2|
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-||
+| LAYER 3|
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 	|
-||
+| LAYER 4|
 | Convolution 3x3	    | etc.      					|				
 | Fully connected		| etc.        					|				
 | Softmax				| etc.        					|				
@@ -58,7 +59,7 @@ My final model consisted of the following layers:
  
 
  This architechture could further be improved by adding drop out.
-
+ The training could be further improved by running for more than 10 epochs.
 
 #### TRAINING
 
@@ -72,21 +73,21 @@ To train the model, I used an LeNet with the following HyperParameters....
 #### METHODOLOGY
 
 My final model accuracies:
-* validation : .924
-* test : .909
+* validation : .93
+* test : .91
 * web : .60
 
 LeNet was used to process these images. It already accepted 32 x 32 x 1 images. It was easy to first edit the model to accept 32 x 32 x 3 but then decided to just to feed it greyscale images and switched it back to 32 x 32 x 1. It definitely performed with a really high accuracy on the different sets of data and the random images I fed it which is covered below. And there is potentially the human error of me misclassifying them and the model actually having guessed them correctly. It wasn't super easy to look up what a random sign was. I don't know the names of signs in the US let alone the names of the diverse set found in Germany.
  
 
-### LITMUS TEST - images outside of dataset
+### LITMUS TEST - images from outside of dataset
 
 I googled German Traffic Signs. Downloaded 5. Tried to figure out what signs they were(as mentioned above I'm not super confident about my ability to identify German signs).
 
 Here they are...
 
-![alt text][1.jpg] ![alt text][2.jpg] ![alt text][3.jpg] 
-![alt text][4.jpg] ![alt text][5.jpg]
+![Speed Limit 30](1.jpg) ![Keep Right ](2.jpg) ![No Passing](3.jpg) 
+![Road Work](4.jpg) ![No Entry](5.jpg)
 
 SideNote: I am really impressed by the image transformation powers of OpenCV. With a single line the randomly sized photo I loaded into the system was transformed into a 32x32x3. There definitely was a bit of squish but overall photo looked the same and it didn't seem to effect the models guesses.
 
