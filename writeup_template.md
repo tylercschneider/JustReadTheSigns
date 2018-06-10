@@ -39,18 +39,21 @@ The dataset could be processed further by taking the existing images from the da
 
 My final model consisted of the following layers:
 
-|          		|     Description	        					
+|          			|     Description	        					
 |:---------------------:|:---------------------------------------------: 
 | LAYER 1 |
-| Input         		| 32x32x1 GreyScale image   			|			
+| Input      		| 32x32x1 GreyScale image   			|			
+||
 | LAYER 2|
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+||
 | LAYER 3|
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 	|
+||
 | LAYER 4|
 | Convolution 3x3	    | etc.      					|				
 | Fully connected		| etc.        					|				
