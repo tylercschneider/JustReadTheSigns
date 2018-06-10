@@ -17,7 +17,7 @@ German Traffic Sign Data athered from
 
 Example Image from DataSet
 
-![datset img](dataphoto.png | width=32)
+![datset img](dataphoto.png) <!-- .element width="32px" -->
 
 
 ### Design and Test a Model Architecture
@@ -86,8 +86,11 @@ I googled German Traffic Signs. Downloaded 5. Tried to figure out what signs the
 
 Here they are...
 
-![Speed Limit 30](1.jpg | width=32) ![Keep Right ](2.jpg | width=32) ![No Passing](3.jpg | width=32) 
-![Road Work](4.jpg | width=32) ![No Entry](5.jpg | width=32)
+![Speed Limit 30](1.jpg)<!-- .element width="32px" --> 
+![Keep Right ](2.jpg)<!-- .element width="32px" --> 
+![No Passing](3.jpg) <!-- .element width="32px" -->
+![Road Work](4.jpg) <!-- .element width="32px" -->
+![No Entry](5.jpg)<!-- .element width="32px" -->
 
 SideNote: I am really impressed by the image transformation powers of OpenCV. With a single line the randomly sized photo I loaded into the system was transformed into a 32x32x3. There definitely was a bit of squish but overall photo looked the same and it didn't seem to effect the models guesses.
 
