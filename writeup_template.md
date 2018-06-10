@@ -1,7 +1,4 @@
-# **JUST READ THE SIGNS** 
-
-## Summary
-
+# JUST READ THE SIGNS
 ---
 ### Data Set Summary & Exploration
 
@@ -27,44 +24,51 @@ Thankfully this huge dataset has already been partially preprocessed.
 All of the images come in  32 x 32 x 3 format. This reduces a ton of preprocessing headaches. 
 This will allow us to pass them into the neural net with minimal processing on our end.
 
-Normalization:
+With Numpy Array and math...
+ - Grey Scale: Sum of RGB/3 
 
-Grey Scale
+ - Normalize: (Each pixel-128)/128
+ 
 
 The dataset could be processed further by taking the existing images from the dataset and augmenting them slightly in order to make them unique enough from there counterparts that dataset would be larger and have even more examples to train on.
 
 
 
-#### MODEL ARCHITECHTURE
+### MODEL ARCHITECHTURE
 
 My final model consisted of the following layers:
 
 |          			|     Description	        					
 |:---------------------:|:---------------------------------------------: 
 | LAYER 1 |
-| Input      		| 32x32x1 GreyScale image   			|			
+| Input      		| 32x32x1 GreyScale image   			
+| Convolution 3x3     	| 1x1 stride, Valid padding, Outputs 28x28x6 	
+| RELU					|												
+| Max pooling	      	| 2x2 stride, Valid padding, Outputs 14x14x6 				
 ||
 | LAYER 2|
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 3x3     	| 1x1 stride, Valid padding, Outputs 28x28x6 	
+| RELU					|												
+| Max pooling	      	| 2x2 stride, Valid padding, Outputs 14x14x6 	
+| Flatten | Outputs 400
 ||
 | LAYER 3|
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 14x14x6 	|
+| Fully Connected	    | Outputs 120 
+| RELU |     						
 ||
 | LAYER 4|
-| Convolution 3x3	    | etc.      					|				
-| Fully connected		| etc.        					|				
-| Softmax				| etc.        					|				
+| Fully connected		| Outputs 84       					
+| RELU				|       								
+||
+| LAYER 5|	
+| Fully connected		| Outputs 43        						
 									
  
 
  This architechture could further be improved by adding drop out.
  The training could be further improved by running for more than 10 epochs.
 
-#### TRAINING
+### TRAINING
 
 To train the model, I used a LeNet with the following HyperParameters....
 
@@ -73,7 +77,7 @@ To train the model, I used a LeNet with the following HyperParameters....
  - Learn Rate : .001
  - Optimizer : Adam
 
-#### METHODOLOGY
+### METHODOLOGY
 
 My final model accuracies:
 * validation : .93
