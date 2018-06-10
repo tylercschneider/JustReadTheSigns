@@ -27,16 +27,18 @@ To RUN
 CALCULATIONS
 ---
 Uses Neural Nets to understand what traffic sign it is looking at.
-Takes in German Traffic Sign Dataset
+
+Takes in German Traffic Sign Dataset.
 
 Dataset is presplit into 3 datasets (train, validate, test)
 
 Before running data through model images are preprocessed.
+
 Each one is converted to...
  - Greyscale
  - Normalized
 
-Runs Training Set Thru LeNet LeNet convolution neural network
+Runs Training Set Thru LeNet convolution neural network
 Checks the models accuracy using the Validation Set
 
 After quality accuracy is obtained from Training, model is run on test set to ensure that it is not overfitting and just learning the training set.
