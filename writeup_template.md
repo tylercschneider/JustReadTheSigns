@@ -43,22 +43,22 @@ My final model consisted of the following layers:
 | LAYER 1 |
 | Input      		| | 32x32x1 GreyScale image   			
 | Convolution 3x3    | 28x28x6	| 1x1 stride, Valid padding 	
-| RELU				| 14x14x6	|												
-| Max pooling	      	| 2x2 stride, Valid padding				
+| Activation				| 	|			RELU									
+| Max pooling	   | 14x14x6  	| 2x2 stride, Valid padding				
 |||
 | LAYER 2| |
-| Convolution 3x3   | 28x28x6  	| 1x1 stride, Valid padding 	
-| RELU				|	|												
-| Max pooling	  | 14x14x6   	| 2x2 stride, Valid padding	
+| Convolution 3x3   | 10x10x16  	| 1x1 stride, Valid padding 	
+| Activation			||	RELU											
+| Max pooling	  | 5x5x16   	| 2x2 stride, Valid padding	
 | Flatten | 400  |
 |||
 | LAYER 3| |
 | Fully Connected	| 120    |
-| RELU |     			|			
+| Activation |     		| RELU			
 |||
 | LAYER 4| |
 | Fully connected	| 84	|    					
-| RELU				|  |     								
+| Activation			|  | RELU							
 |||
 | LAYER 5|	
 | Fully connected	| 43	|       						
