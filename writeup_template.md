@@ -89,7 +89,9 @@ I googled German Traffic Signs. Downloaded 5. Tried to figure out what signs the
 
 Here they are...
 
+<img src="1.jpg" alt="Speed Limit" width="32px"/>
 ![Speed Limit 30](1.jpg =32x)<!-- .element width="32px" --> 
+<img src="2.jpg" alt="Speed Limit" width="32px"/>
 ![Keep Right ](2.jpg)<!-- .element width="32px" --> 
 ![No Passing](3.jpg =32x) <!-- .element width="32px" -->
 ![Road Work](4.jpg) <!-- .element width="32px" -->
