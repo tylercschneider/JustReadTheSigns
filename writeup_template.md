@@ -38,30 +38,30 @@ The dataset could be processed further by taking the existing images from the da
 
 My final model consisted of the following layers:
 
-|          			|     Description	        					
-|:---------------------:|:---------------------------------------------: 
+|          			|     Output | Description	        					
+|:---------------------:|:--:|:---------------------------------------------: 
 | LAYER 1 |
-| Input      		| 32x32x1 GreyScale image   			
-| Convolution 3x3     	| 1x1 stride, Valid padding, Outputs 28x28x6 	
-| RELU					|												
-| Max pooling	      	| 2x2 stride, Valid padding, Outputs 14x14x6 				
-||
-| LAYER 2|
-| Convolution 3x3     	| 1x1 stride, Valid padding, Outputs 28x28x6 	
-| RELU					|												
-| Max pooling	      	| 2x2 stride, Valid padding, Outputs 14x14x6 	
-| Flatten | Outputs 400
-||
-| LAYER 3|
-| Fully Connected	    | Outputs 120 
-| RELU |     						
-||
-| LAYER 4|
-| Fully connected		| Outputs 84       					
-| RELU				|       								
-||
+| Input      		| | 32x32x1 GreyScale image   			
+| Convolution 3x3    | 28x28x6	| 1x1 stride, Valid padding 	
+| RELU				| 14x14x6	|												
+| Max pooling	      	| 2x2 stride, Valid padding				
+|||
+| LAYER 2| |
+| Convolution 3x3   | 28x28x6  	| 1x1 stride, Valid padding 	
+| RELU				|	|												
+| Max pooling	  | 14x14x6   	| 2x2 stride, Valid padding	
+| Flatten | 400  |
+|||
+| LAYER 3| |
+| Fully Connected	| 120    |
+| RELU |     			|			
+|||
+| LAYER 4| |
+| Fully connected	| 84	|    					
+| RELU				|  |     								
+|||
 | LAYER 5|	
-| Fully connected		| Outputs 43        						
+| Fully connected	| 43	|       						
 									
  
 
