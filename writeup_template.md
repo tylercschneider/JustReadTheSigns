@@ -42,15 +42,15 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					
 |:---------------------:|:---------------------------------------------: 
 | Input         		| 32x32x1 GreyScale image   			|			
-
+||
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-
+||
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 	|
-
+||
 | Convolution 3x3	    | etc.      					|				
 | Fully connected		| etc.        					|				
 | Softmax				| etc.        					|				
@@ -67,7 +67,7 @@ To train the model, I used an LeNet with the following HyperParameters....
  - Epochs : 10
  - Batch Size : 128
  - Learn Rate : .001
- - AdamOptimizer
+ - Optimizer : Adam
 
 #### METHODOLOGY
 
@@ -76,7 +76,7 @@ My final model accuracies:
 * test : .909
 * web : .60
 
-* LeNet was used to process these images. It already accepted 32 x 32 x 1 images. It was easy to first edit the model to accept 32 x 32 x 3 but then decided to just to feed it greyscale images and switched it back to 32 x 32 x 1. It definitely performed with a really high accuracy on the different sets of data and the random images I fed it which is covered below. And there is potentially the human error of me misclassifying them and the model actually having guessed them correctly. It wasn't super easy to look up what a random sign was. I don't know the names of signs in the US let alone the names of the diverse set found in Germany.
+LeNet was used to process these images. It already accepted 32 x 32 x 1 images. It was easy to first edit the model to accept 32 x 32 x 3 but then decided to just to feed it greyscale images and switched it back to 32 x 32 x 1. It definitely performed with a really high accuracy on the different sets of data and the random images I fed it which is covered below. And there is potentially the human error of me misclassifying them and the model actually having guessed them correctly. It wasn't super easy to look up what a random sign was. I don't know the names of signs in the US let alone the names of the diverse set found in Germany.
  
 
 ### LITMUS TEST - images outside of dataset
@@ -95,11 +95,11 @@ RESULTS
 
 | Image			        |     Prediction	        					
 |:---------------------:|:---------------------------------------------: 
-| Stop Sign      		| Stop sign   									 
-| U-turn     			| U-turn 										
-| Yield					| Yield											
-| 100 km/h	      		| Bumpy Road					 				
-| Slippery Road			| Slippery Road      							
+| Speed Limit 30      		| Speed Limit 30  									 
+| Keep Right     			| Priority Road										
+| No Passing			| Go Straight Or Left										
+| Road Work      		| Road Work					 				
+| No Entry		| No Entry      							
 
 
 The model was able to correctly guess 3 out of 5 signs, which gives an accuracy of 60%. This really impresses me given that these are wild signs, are heavily edited, and I potentially misclassified them. I feel confident that I guessed at least 3 right if the model agreed with me!
@@ -108,56 +108,58 @@ The model was able to correctly guess 3 out of 5 signs, which gives an accuracy 
 ### So the thought process of the model was as follows...
 
 
-First Sign: 
+First Sign: Speed Limit 30
 
 | Probability         	|     Prediction	        					 
 |:---------------------:|:---------------------------------------------: 
-| .60         			| Stop sign   								 
-| .20     				| U-turn 										
-| .05					| Yield											
-| .04	      			| Bumpy Road					 			
-| .01				    | Slippery Road      							
+| .999         			| Speed Limit 30   								 
+| .001    				| Speed Limit 20										
+| .001					| Wild Animals Crossing											
+| .00     			| Roundabout Mandatory					 			
+| .00				    | Speed Limit 50      							
 
 
-Second Sign:   
-
-| Probability         	|     Prediction	        					
-|:---------------------:|:---------------------------------------------: 
-| .60         			| Stop sign   									 
-| .20     				| U-turn 										
-| .05					| Yield											
-| .04	      			| Bumpy Road					 				
-| .01				    | Slippery Road      							
-
-Third Sign:
+Second Sign: Keep Right
 
 | Probability         	|     Prediction	        					
 |:---------------------:|:---------------------------------------------: 
-| .60         			| Stop sign   									 
-| .20     				| U-turn 										
-| .05					| Yield											
-| .04	      			| Bumpy Road					 				
-| .01				    | Slippery Road      							
+ .995         			| Priority Road   									 
+| .005     				| No Passing										
+| .00					| Slippery Road											
+| .00	      			| Vehicles over 3.5 metric tons prohibited					 				
+| .00			    | No passing for vehicles over 3.5 metric tons     							
 
-Fourth Sign:
+
+Third Sign: No Passing
+
+| Probability         	|     Prediction	        					
+|:-------------------:|:---------------------------------------------: 
+| .969        			| Go straight or left   									 
+| .025     				| Roundabout mandatory										
+| .006					| Traffic signals											
+| .00	      			| Priority Road					 				
+| .00				    | Road narrows on the right      							
+
+
+Fourth Sign: Road Work
 
 | Probability         	|     Prediction	        					
 |:---------------------:|:---------------------------------------------: 
-| .60         			| Stop sign   									 
-| .20     				| U-turn 										
-| .05					| Yield											
-| .04	      			| Bumpy Road					 				
-| .01				    | Slippery Road      							
+| 1.00         			| Road Work   									 
+| .00    				| Right-of-way at the next intersection 										
+| .00					| Dangerous curve to the left										
+| .00	      			| Double curve					 				
+| .00				    | Speed limit 30    							
 
 
-Fifth Sign:
+Fifth Sign: No Entry
 
 | Probability         	|     Prediction	        					
 |:---------------------:|:---------------------------------------------: 
-| .60         			| Stop sign   									 
-| .20     				| U-turn 										
-| .05					| Yield											
-| .04	      			| Bumpy Road					 				
-| .01				    | Slippery Road      							
+|  1.00         		| No Entry 									 
+| .00    				| Stop 										
+| .00					| Priority road										
+| .00	      			| No passing					 				
+| .00    				| Speed Limit 20
 
 ### Awesome Stuff :)
