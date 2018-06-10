@@ -66,7 +66,7 @@ My final model consisted of the following layers:
 
 #### TRAINING
 
-To train the model, I used an LeNet with the following HyperParameters....
+To train the model, I used a LeNet with the following HyperParameters....
 
  - Epochs : 10
  - Batch Size : 128
@@ -89,9 +89,9 @@ I googled German Traffic Signs. Downloaded 5. Tried to figure out what signs the
 
 Here they are...
 
-![Speed Limit 30](1.jpg)<!-- .element width="32px" --> 
+![Speed Limit 30](1.jpg =32x)<!-- .element width="32px" --> 
 ![Keep Right ](2.jpg)<!-- .element width="32px" --> 
-![No Passing](3.jpg) <!-- .element width="32px" -->
+![No Passing](3.jpg =32x) <!-- .element width="32px" -->
 ![Road Work](4.jpg) <!-- .element width="32px" -->
 ![No Entry](5.jpg)<!-- .element width="32px" -->
 
