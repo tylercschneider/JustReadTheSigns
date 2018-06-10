@@ -48,7 +48,7 @@ My final model consisted of the following layers:
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				
 
 | Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6 	
-
+| RELU					|												
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 	
 
 | Convolution 3x3	    | etc.      									

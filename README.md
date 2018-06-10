@@ -1,6 +1,6 @@
 PROJECT
 ---
-Basic Robot Vision - UDACITY Self Driving Car Engineer P1
+Just Read the Signs - UDACITY Self Driving Car Engineer
 
 
 DEVELOPER CONTACT
@@ -21,23 +21,28 @@ To RUN
 ---
 1. Download the environment, the github link above has detailed directions
 2. Open run code in jupyter notebook.
-3. You images within file to see how it works.
+3. Your images within file to see how it works.
 4. Predicts and overlays lane lines on single images or every frame in a video it is passed.
 
 CALCULATIONS
 ---
-Uses very rudimentary computer vision techniques.
-Passes an image
-Converts to grayscale
-Smoothes with Gaussian
-Finds Gradients with Canny
-Removes sections of the image that are unimportant with a mask
-Finds what gradients are significant in terms of forming longer lines using Hough equation
-Draws predicted lane lines using draw lines function. It calculates the predicted slope and x values associated with fixed y dimensions.
+Uses Neural Nets to understand what traffic sign it is looking at.
+Takes in German Traffic Sign Dataset
 
-Takes original image and overlays predicted lane lines on it.
+Dataset is presplit into 3 datasets (train, validate, test)
 
-Repeats over in over to process a video file.
+Before running data through model images are preprocessed.
+Each one is converted to...
+ - Greyscale
+ - Normalized
+
+Runs Training Set Thru LeNet LeNet convolution neural network
+Checks the models accuracy using the Validation Set
+
+After quality accuracy is obtained from Training, model is run on test set to ensure that it is not overfitting and just learning the training set.
+
+
+Finally test on images from the web that are not part of the pre built datasets. Must be 1 of the 43 german traffic signs that the model has been trained on. 
 
 
 
