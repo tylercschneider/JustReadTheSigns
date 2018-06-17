@@ -20,9 +20,9 @@ HIGHLIGHTS
 To RUN
 ---
 1. Download the environment, the github link above has detailed directions
-2. Open run code in jupyter notebook.
-3. Your images within file to see how it works.
-4. Predicts and overlays lane lines on single images or every frame in a video it is passed.
+2. Open and run code in jupyter notebook.
+3. Takes traffic sign as input.
+4. Predicts which traffic sign against trained model.
 
 CALCULATIONS
 ---
