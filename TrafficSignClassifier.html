@@ -11927,7 +11927,7 @@ Number of classes = 43
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x128f64748&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x127bca710&gt;</pre>
 </div>
 
 </div>
@@ -12031,13 +12031,13 @@ To meet specifications, at least 0.93.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 
-<span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">256</span>
 </pre></div>
 
 </div>
@@ -12055,7 +12055,7 @@ To meet specifications, at least 0.93.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ARCHITECTURE</span>
@@ -12151,7 +12151,7 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -12166,12 +12166,12 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TRAIN</span>
 
-<span class="n">rate</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mf">0.009</span>
 
 <span class="n">logits</span> <span class="o">=</span> <span class="n">LeNets_Child</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -12191,7 +12191,7 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">correct_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">one_hot_y</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -12224,7 +12224,7 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
@@ -12266,34 +12266,40 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 <pre>Training...
 
 EPOCH 1 ...
-Validation Accuracy = 0.739
+Validation Accuracy = 0.890
 
 EPOCH 2 ...
-Validation Accuracy = 0.846
+Validation Accuracy = 0.915
 
 EPOCH 3 ...
-Validation Accuracy = 0.894
+Validation Accuracy = 0.924
 
 EPOCH 4 ...
-Validation Accuracy = 0.907
+Validation Accuracy = 0.922
 
 EPOCH 5 ...
-Validation Accuracy = 0.902
+Validation Accuracy = 0.918
 
 EPOCH 6 ...
-Validation Accuracy = 0.927
+Validation Accuracy = 0.937
 
 EPOCH 7 ...
-Validation Accuracy = 0.913
+Validation Accuracy = 0.932
 
 EPOCH 8 ...
-Validation Accuracy = 0.904
+Validation Accuracy = 0.914
 
 EPOCH 9 ...
-Validation Accuracy = 0.908
+Validation Accuracy = 0.932
 
 EPOCH 10 ...
-Validation Accuracy = 0.924
+Validation Accuracy = 0.929
+
+EPOCH 11 ...
+Validation Accuracy = 0.918
+
+EPOCH 12 ...
+Validation Accuracy = 0.931
 
 Model saved
 </pre>
@@ -12325,7 +12331,7 @@ Model saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Find Images to Use from German Traffic Sign Data Set</span>
@@ -12381,7 +12387,7 @@ Image data shape = (32, 32, 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
@@ -12406,7 +12412,7 @@ Image data shape = (32, 32, 1)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test Accuracy = 0.909
+<pre>Test Accuracy = 0.905
 </pre>
 </div>
 </div>
@@ -12425,7 +12431,7 @@ Image data shape = (32, 32, 1)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -12513,7 +12519,7 @@ Pic #5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Transform images into the right format for model</span>
@@ -12568,7 +12574,7 @@ Pic #5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
@@ -12612,37 +12618,37 @@ Correct: 1
 Guess: 1
 
 PROBABILITIES
-Sign 1 -&gt; 0.999
-Sign 0 -&gt; 0.001
-Sign 31 -&gt; 0.001
-Sign 40 -&gt; 0.000
+Sign 1 -&gt; 1.000
+Sign 11 -&gt; 0.000
+Sign 29 -&gt; 0.000
+Sign 38 -&gt; 0.000
 Sign 2 -&gt; 0.000
 
 ********************************************
 PIC #2
 ********************************************
 Correct: 38
-Guess: 12
+Guess: 9
 
 PROBABILITIES
-Sign 12 -&gt; 0.995
-Sign 9 -&gt; 0.005
+Sign 9 -&gt; 0.770
+Sign 12 -&gt; 0.230
 Sign 23 -&gt; 0.000
-Sign 16 -&gt; 0.000
-Sign 10 -&gt; 0.000
+Sign 40 -&gt; 0.000
+Sign 11 -&gt; 0.000
 
 ********************************************
 PIC #3
 ********************************************
 Correct: 9
-Guess: 37
+Guess: 40
 
 PROBABILITIES
-Sign 37 -&gt; 0.969
-Sign 40 -&gt; 0.025
-Sign 26 -&gt; 0.006
-Sign 12 -&gt; 0.000
-Sign 24 -&gt; 0.000
+Sign 40 -&gt; 0.995
+Sign 23 -&gt; 0.004
+Sign 37 -&gt; 0.000
+Sign 26 -&gt; 0.000
+Sign 18 -&gt; 0.000
 
 ********************************************
 PIC #4
@@ -12652,10 +12658,10 @@ Guess: 25
 
 PROBABILITIES
 Sign 25 -&gt; 1.000
-Sign 11 -&gt; 0.000
-Sign 19 -&gt; 0.000
+Sign 29 -&gt; 0.000
+Sign 31 -&gt; 0.000
 Sign 21 -&gt; 0.000
-Sign 1 -&gt; 0.000
+Sign 30 -&gt; 0.000
 
 ********************************************
 PIC #5
@@ -12666,9 +12672,9 @@ Guess: 17
 PROBABILITIES
 Sign 17 -&gt; 1.000
 Sign 14 -&gt; 0.000
-Sign 12 -&gt; 0.000
-Sign 9 -&gt; 0.000
-Sign 0 -&gt; 0.000
+Sign 33 -&gt; 0.000
+Sign 32 -&gt; 0.000
+Sign 30 -&gt; 0.000
 
 </pre>
 </div>
